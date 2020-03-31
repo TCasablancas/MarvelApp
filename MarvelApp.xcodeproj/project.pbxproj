@@ -59,7 +59,6 @@
 		EF1F17572433932800D9FF19 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17562433932800D9FF19 /* ErrorViewModel.swift */; };
 		EF1F175C2433937D00D9FF19 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F175A2433937D00D9FF19 /* LoadingViewController.swift */; };
 		EF1F175D2433937D00D9FF19 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1F175B2433937D00D9FF19 /* LoadingViewController.xib */; };
-		EF1F17612433940000D9FF19 /* CharacterHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F175F2433940000D9FF19 /* CharacterHeaderTableViewCell.swift */; };
 		EF1F17622433940000D9FF19 /* CharacterHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17602433940000D9FF19 /* CharacterHeaderTableViewCell.xib */; };
 		EF1F17642433942900D9FF19 /* CharacterHeaderTableViewCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17632433942900D9FF19 /* CharacterHeaderTableViewCellDTO.swift */; };
 		EF1F17682433947F00D9FF19 /* CharacterContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17662433947F00D9FF19 /* CharacterContentTableViewCell.swift */; };
@@ -73,6 +72,7 @@
 		EF1F17792433C35A00D9FF19 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17772433C35A00D9FF19 /* ListCollectionViewCell.swift */; };
 		EF1F177A2433C35A00D9FF19 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17782433C35A00D9FF19 /* ListCollectionViewCell.xib */; };
 		EF1F177C2433C99600D9FF19 /* ListCollectionViewCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177B2433C99600D9FF19 /* ListCollectionViewCellDTO.swift */; };
+		EF1F177E2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177D2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +156,6 @@
 		EF1F17562433932800D9FF19 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		EF1F175A2433937D00D9FF19 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		EF1F175B2433937D00D9FF19 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
-		EF1F175F2433940000D9FF19 /* CharacterHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		EF1F17602433940000D9FF19 /* CharacterHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		EF1F17632433942900D9FF19 /* CharacterHeaderTableViewCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderTableViewCellDTO.swift; sourceTree = "<group>"; };
 		EF1F17662433947F00D9FF19 /* CharacterContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterContentTableViewCell.swift; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		EF1F17772433C35A00D9FF19 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EF1F17782433C35A00D9FF19 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		EF1F177B2433C99600D9FF19 /* ListCollectionViewCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCellDTO.swift; sourceTree = "<group>"; };
+		EF1F177D2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		FF7D73C8D0390BA992C332CB /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -450,9 +450,9 @@
 		EF1F175E243393C400D9FF19 /* CharacterHeader */ = {
 			isa = PBXGroup;
 			children = (
-				EF1F175F2433940000D9FF19 /* CharacterHeaderTableViewCell.swift */,
 				EF1F17602433940000D9FF19 /* CharacterHeaderTableViewCell.xib */,
 				EF1F17632433942900D9FF19 /* CharacterHeaderTableViewCellDTO.swift */,
+				EF1F177D2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift */,
 			);
 			path = CharacterHeader;
 			sourceTree = "<group>";
@@ -507,6 +507,7 @@
 				EF1F16BF2432932600D9FF19 /* Sources */,
 				EF1F16C02432932600D9FF19 /* Frameworks */,
 				EF1F16C12432932600D9FF19 /* Resources */,
+				B8B2ECD1972D4BA8DEC13D93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -700,6 +701,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B8B2ECD1972D4BA8DEC13D93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelAppTests/Pods-MarvelAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D66A7CDAB00CD2209578C072 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -751,7 +769,6 @@
 				EF1F172D24337B4F00D9FF19 /* MarvelMockService.swift in Sources */,
 				EF1F16FB2433701800D9FF19 /* MarvelAPI.swift in Sources */,
 				EF1F1735243385B500D9FF19 /* ListViewModel.swift in Sources */,
-				EF1F17612433940000D9FF19 /* CharacterHeaderTableViewCell.swift in Sources */,
 				EF1F16EC2432947100D9FF19 /* NetworkImageLoader.swift in Sources */,
 				EF1F16F124336F5600D9FF19 /* Coordinatable.swift in Sources */,
 				EF1F16F924336FD900D9FF19 /* AlertControllerPresentable.swift in Sources */,
@@ -763,6 +780,7 @@
 				EF1F176B2433949300D9FF19 /* CharacterContentTableViewCellDTO.swift in Sources */,
 				EF1F16B12432932400D9FF19 /* AppDelegate.swift in Sources */,
 				EF1F17072433769D00D9FF19 /* CharacterDataContainer.swift in Sources */,
+				EF1F177E2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift in Sources */,
 				EF1F1714243377B000D9FF19 /* ComicSummary.swift in Sources */,
 				EF1F170B243376C500D9FF19 /* Image.swift in Sources */,
 				EF1F17372433865500D9FF19 /* CharacterSection.swift in Sources */,

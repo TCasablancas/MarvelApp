@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CCBottomRefreshControl/CCBottomRefreshControl.framework
 ${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework
-${BUILT_PRODUCTS_DIR}/UITestHelper/UITestHelper.framework
+${BUILT_PRODUCTS_DIR}/UITestHelper.default-App/UITestHelper.framework
+${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
+${BUILT_PRODUCTS_DIR}/Quick/Quick.framework

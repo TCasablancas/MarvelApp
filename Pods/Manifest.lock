@@ -1,24 +1,36 @@
 PODS:
   - CCBottomRefreshControl (0.5.2)
+  - Nimble (8.0.7)
   - PureLayout (3.1.5)
+  - Quick (2.2.0)
+  - UITestHelper (1.5.0):
+    - UITestHelper/Core (= 1.5.0)
   - UITestHelper/App (1.5.0)
+  - UITestHelper/Core (1.5.0)
 
 DEPENDENCIES:
   - CCBottomRefreshControl
+  - Nimble
   - PureLayout
+  - Quick
+  - UITestHelper
   - UITestHelper/App
 
 SPEC REPOS:
   trunk:
     - CCBottomRefreshControl
+    - Nimble
     - PureLayout
+    - Quick
     - UITestHelper
 
 SPEC CHECKSUMS:
   CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
+  Nimble: a73af6ecd4c9106f434f3d55fc54570be3739e0b
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   UITestHelper: d0cf75c8b1e9a01fe860609d773d5e9b104e498c
 
-PODFILE CHECKSUM: a30e84be48f5135b2046dbf5ee4d8b128cc725ad
+PODFILE CHECKSUM: 60de5e1b4c2fce34e33874ad2b919fad4ab5d67a
 
 COCOAPODS: 1.8.4

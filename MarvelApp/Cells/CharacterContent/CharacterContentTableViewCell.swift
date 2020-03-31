@@ -9,18 +9,20 @@
 import UIKit
 
 class CharacterContentTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var contentImageView: NetworkImageLoader!
     @IBOutlet weak var titleLabel: UILabel!
 }
 
 extension CharacterContentTableViewCell: ViewConfigurable {
     
-    typealias ViewModel = CharacterContentTableViewCellDTO
+    typealias viewModel = CharacterContentTableViewCellDTO
     
     func configure(with viewModel: CharacterContentTableViewCellDTO?) {
-        titleLabel.text = viewModel?.title
+        self.titleLabel.text = viewModel?.title
+        
         if let url = viewModel?.imageURL {
-           contentImageView.loadImage(from: url)
+            self.contentImageView.loadImage(from: url)
         }
     }
 }

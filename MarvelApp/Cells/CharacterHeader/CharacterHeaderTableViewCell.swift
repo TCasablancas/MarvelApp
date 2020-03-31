@@ -14,11 +14,9 @@ class CharacterHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var favoritedIconImageView: UIImageView!
     
     private let gradientLayer: CAGradientLayer = CAGradientLayer()
-    
-    private var favorited: Bool = false
+    private var favorited: Bool =  false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,40 +25,38 @@ class CharacterHeaderTableViewCell: UITableViewCell {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        setupGradient()
-    }
-    
-    private func setupGradient() {
-        gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor(white: 1.0, alpha: 0), UIColor.black.cgColor, UIColor.black.cgColor]
-        gradientLayer.locations = [0.0, 0.9, 1.0]
-        gradientView.layer.addSublayer(gradientLayer)
+        self.setupGradient()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        favoritedIconImageView.isHidden = !favorited
+        
     }
-
 }
 
-extension CharacterHeaderTableViewCell: ViewConfigurable {
+extension CharacterHeaderTableViewCell {
     
-    typealias ViewModel = CharacterHeaderTableViewCellDTO
+    typealias viewModel = CharacterHeaderTableViewCellDTO
+    
+    private func setupGradient() {
+        self.gradientLayer.frame = self.gradientView.bounds
+        self.gradientLayer.colors = [UIColor(white: 1.0, alpha: 0), UIColor.black.cgColor, UIColor.black.cgColor]
+        self.gradientLayer.locations = [0.0, 0.9, 1.0]
+        self.gradientLayer.addSublayer(gradientLayer)
+    }
     
     func configure(with viewModel: CharacterHeaderTableViewCellDTO?) {
-        
         favorited = viewModel?.favorited ?? false
-        titleLabel.text = viewModel?.title
+        self.titleLabel.text = viewModel?.title
         
         if !(viewModel?.description?.isEmpty ?? true) {
-            descriptionLabel.text = viewModel?.description ?? "No description"
+            self.descriptionLabel.text = viewModel?.description ?? "Personagem sem descrição"
         } else {
-            descriptionLabel.text = "No description"
+            self.descriptionLabel.text = "Personagem sem descrição"
         }
         
         if let url = viewModel?.imageURL {
-            headerImageView.loadImage(from: url)
+            self.headerImageView.loadImage(from: url)
         }
     }
 }

@@ -9,9 +9,9 @@
 import UIKit
 
 class ErrorViewController: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var actionButtom: UIButton!
+    @IBOutlet weak var actionButton: UIButton!
     
     private let viewModel: ErrorViewModel? = nil
     private var action: (() -> Void)?
@@ -27,20 +27,19 @@ class ErrorViewController: UIViewController {
     }
     
     @IBAction func action(_ sender: Any) {
-        action?()
+        self.action?()
     }
     
 }
 
 extension ErrorViewController: ViewConfigurable {
-
-    typealias ViewModel = ErrorViewModel
+    
+    typealias viewModel = ErrorViewModel
     
     func configure(with viewModel: ErrorViewModel?) {
-        titleLabel.text = viewModel?.message
-        actionButtom.setTitle(viewModel?.actionTitle, for: .normal)
-        actionButtom.isHidden = (viewModel?.actionTitle == nil)
-        action = viewModel?.action
+        self.titleLabel.text = viewModel?.message
+        self.actionButton.setTitle(viewModel?.actionTitle, for: .normal)
+        self.actionButton.isHidden = (viewModel?.actionTitle == nil)
+        self.action = viewModel?.action
     }
-    
 }
