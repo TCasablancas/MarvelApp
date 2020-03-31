@@ -1,0 +1,24 @@
+PODS:
+  - CCBottomRefreshControl (0.5.2)
+  - PureLayout (3.1.5)
+  - UITestHelper/App (1.5.0)
+
+DEPENDENCIES:
+  - CCBottomRefreshControl
+  - PureLayout
+  - UITestHelper/App
+
+SPEC REPOS:
+  trunk:
+    - CCBottomRefreshControl
+    - PureLayout
+    - UITestHelper
+
+SPEC CHECKSUMS:
+  CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  UITestHelper: d0cf75c8b1e9a01fe860609d773d5e9b104e498c
+
+PODFILE CHECKSUM: a30e84be48f5135b2046dbf5ee4d8b128cc725ad
+
+COCOAPODS: 1.8.4
