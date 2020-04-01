@@ -1,5 +1,5 @@
 framework module UITestHelper {
-  umbrella header "UITestHelper.default-App-umbrella.h"
+  umbrella header "UITestHelper-umbrella.h"
 
   export *
   module * { export * }

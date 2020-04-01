@@ -20,7 +20,7 @@ extension AlertControllerPresentable {
         
         DispatchQueue.main.async {
             
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            guard let appDelegate = UIApplication.shared.delegate as? SceneDelegate else {
                 return
             }
             

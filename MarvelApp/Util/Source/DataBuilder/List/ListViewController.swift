@@ -24,7 +24,7 @@ class ListViewController: ViewController<UIView>, UICollectionViewDataSource, UI
     private lazy var searchController: UISearchController = {
         let controller = UISearchController(searchResultsController: nil)
         controller.obscuresBackgroundDuringPresentation = false
-        controller.searchBar.placeholder = "Search Characters"
+        controller.searchBar.placeholder = "Procurar Personagem"
         controller.searchBar.delegate = self
         return controller
     }()

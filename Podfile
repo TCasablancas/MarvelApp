@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
 
 def default_pods
   pod 'PureLayout'
@@ -13,6 +13,7 @@ end
 
 target 'MarvelApp' do
   use_frameworks!
+  #use_modular_headers!
   default_pods
   pod 'UITestHelper/App'
 
@@ -22,6 +23,7 @@ target 'MarvelApp' do
   end
 
   target 'MarvelAppUITests' do
+    inherit! :search_paths
     default_pods
     tests_pod
     pod 'UITestHelper'

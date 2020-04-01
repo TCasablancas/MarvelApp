@@ -18,18 +18,30 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-ge-rGf">
-                    <rect key="frame" x="187" y="428" width="40" height="40"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdM-Nc-84h">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-ge-rGf">
+                            <rect key="frame" x="187" y="389" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="2qi-Qy-K4T"/>
+                                <constraint firstAttribute="height" constant="40" id="q5d-Uc-un4"/>
+                            </constraints>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="2qi-Qy-K4T"/>
-                        <constraint firstAttribute="height" constant="40" id="q5d-Uc-un4"/>
+                        <constraint firstItem="ImB-ge-rGf" firstAttribute="centerY" secondItem="zdM-Nc-84h" secondAttribute="centerY" id="Fxk-IP-Z1q"/>
+                        <constraint firstItem="ImB-ge-rGf" firstAttribute="centerX" secondItem="zdM-Nc-84h" secondAttribute="centerX" id="dJk-A6-HZF"/>
                     </constraints>
-                </activityIndicatorView>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="ImB-ge-rGf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="68E-3V-eJC"/>
-                <constraint firstItem="ImB-ge-rGf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7DV-kx-21E"/>
+                <constraint firstItem="zdM-Nc-84h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4Iw-L8-Unn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zdM-Nc-84h" secondAttribute="trailing" id="TcN-Ze-2Ti"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zdM-Nc-84h" secondAttribute="bottom" id="dmR-Ga-iFs"/>
+                <constraint firstItem="zdM-Nc-84h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ufN-J3-wjc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="123"/>
