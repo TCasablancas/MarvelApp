@@ -14,7 +14,6 @@
 		EF1F16B82432932400D9FF19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1F16B62432932400D9FF19 /* Main.storyboard */; };
 		EF1F16BA2432932600D9FF19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1F16B92432932600D9FF19 /* Assets.xcassets */; };
 		EF1F16BD2432932600D9FF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1F16BB2432932600D9FF19 /* LaunchScreen.storyboard */; };
-		EF1F16C82432932600D9FF19 /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F16C72432932600D9FF19 /* MarvelAppTests.swift */; };
 		EF1F16D32432932600D9FF19 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F16D22432932600D9FF19 /* MarvelAppUITests.swift */; };
 		EF1F16E5243293EF00D9FF19 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F16E4243293EF00D9FF19 /* AppCoordinator.swift */; };
 		EF1F16E82432941E00D9FF19 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F16E72432941E00D9FF19 /* Coordinator.swift */; };
@@ -72,6 +71,8 @@
 		EF1F177A2433C35A00D9FF19 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17782433C35A00D9FF19 /* ListCollectionViewCell.xib */; };
 		EF1F177C2433C99600D9FF19 /* ListCollectionViewCellDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177B2433C99600D9FF19 /* ListCollectionViewCellDTO.swift */; };
 		EF1F177E2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177D2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift */; };
+		EF1F17802434D33700D9FF19 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177F2434D33700D9FF19 /* ListTests.swift */; };
+		EF1F17822434D72E00D9FF19 /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17812434D72E00D9FF19 /* ListUITests.swift */; };
 		FB7638AA5686E499D8073C83 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431920CA334B71424431C864 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +112,6 @@
 		EF1F16BC2432932600D9FF19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF1F16BE2432932600D9FF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1F16C32432932600D9FF19 /* MarvelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF1F16C72432932600D9FF19 /* MarvelAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppTests.swift; sourceTree = "<group>"; };
 		EF1F16C92432932600D9FF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1F16CE2432932600D9FF19 /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1F16D22432932600D9FF19 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
@@ -172,6 +172,8 @@
 		EF1F17782433C35A00D9FF19 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		EF1F177B2433C99600D9FF19 /* ListCollectionViewCellDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCellDTO.swift; sourceTree = "<group>"; };
 		EF1F177D2433D12D00D9FF19 /* CharacterHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		EF1F177F2434D33700D9FF19 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
+		EF1F17812434D72E00D9FF19 /* ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUITests.swift; sourceTree = "<group>"; };
 		FF7D73C8D0390BA992C332CB /* Pods-MarvelApp-MarvelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-MarvelApp-MarvelAppUITests/Pods-MarvelApp-MarvelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,8 +272,8 @@
 		EF1F16C62432932600D9FF19 /* MarvelAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF1F16C72432932600D9FF19 /* MarvelAppTests.swift */,
 				EF1F16C92432932600D9FF19 /* Info.plist */,
+				EF1F177F2434D33700D9FF19 /* ListTests.swift */,
 			);
 			path = MarvelAppTests;
 			sourceTree = "<group>";
@@ -281,6 +283,7 @@
 			children = (
 				EF1F16D22432932600D9FF19 /* MarvelAppUITests.swift */,
 				EF1F16D42432932600D9FF19 /* Info.plist */,
+				EF1F17812434D72E00D9FF19 /* ListUITests.swift */,
 			);
 			path = MarvelAppUITests;
 			sourceTree = "<group>";
@@ -803,7 +806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF1F16C82432932600D9FF19 /* MarvelAppTests.swift in Sources */,
+				EF1F17802434D33700D9FF19 /* ListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1F16D32432932600D9FF19 /* MarvelAppUITests.swift in Sources */,
+				EF1F17822434D72E00D9FF19 /* ListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +975,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F48MGZ2AUR;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -990,6 +995,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F48MGZ2AUR;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
