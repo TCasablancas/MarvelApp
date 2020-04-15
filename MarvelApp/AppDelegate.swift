@@ -14,17 +14,13 @@ let imageCache = NSCache<NSString, UIImage>()
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    private let appCoordinator = AppCoordinator()
+    //private let appCoordinator = AppCoordinator()
     var window: UIWindow?
+    var navigationController: UINavigationController?
+    var orientationLock = UIInterfaceOrientationMask.portrait
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
-        window?.rootViewController = appCoordinator.rootViewController
-        window?.makeKeyAndVisible()
-        
-        appCoordinator.start()
         return true
     }
 

@@ -1,9 +1,12 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.0'
+ platform :ios, '11.0'
 
 def default_pods
-  pod 'PureLayout'
-  pod 'CCBottomRefreshControl'
+  pod 'ObjectMapper'
+  pod 'CryptoSwift'
+  pod 'AlamofireObjectMapper'
+  pod 'Alamofire', '~> 4.5'
+  pod 'Kingfisher', '~> 4.0'
 end
 
 def tests_pod
@@ -12,18 +15,22 @@ def tests_pod
 end
 
 target 'MarvelApp' do
+
   use_frameworks!
-  #use_modular_headers!
+
   default_pods
   pod 'UITestHelper/App'
+
+  # Pods for MarvelApp
 
   target 'MarvelAppTests' do
     inherit! :search_paths
     tests_pod
+    # Pods for testing
   end
 
   target 'MarvelAppUITests' do
-    inherit! :search_paths
+    # Pods for testing
     default_pods
     tests_pod
     pod 'UITestHelper'

@@ -38,9 +38,12 @@ class MarvelService {
 
     func character(_ name: String?, page: Int, completion: @escaping CharacterDataWrapperCompletionResult) {
         
-        let timestamp = "\(Date().timeIntervalSince1970)"
-        let hash = "\(timestamp)\(privateKey)\(apiKey)".md5
+        //let timestamp = "\(Date().timeIntervalSince1970)"
+        let timestamp = "thesoer"
+        //let hash = "\(timestamp)\(privateKey)\(apiKey)".md5
 
+        let hash = "c121a4bf4b782bd96dc7c1a8467e627b"
+        
         var components = URLComponents(url: baseURL.appendingPathComponent("v1/public/characters"), resolvingAgainstBaseURL: true)
 
         var customQueryItems = [URLQueryItem]()
