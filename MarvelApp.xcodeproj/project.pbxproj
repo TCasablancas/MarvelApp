@@ -33,6 +33,7 @@
 		EF96A549244671D900D6A983 /* RequestCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A548244671D900D6A983 /* RequestCharacter.swift */; };
 		EF96A54C24476AEB00D6A983 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A54A24476AEB00D6A983 /* CharactersTableViewCell.swift */; };
 		EF96A54D24476AEB00D6A983 /* CharactersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF96A54B24476AEB00D6A983 /* CharactersTableViewCell.xib */; };
+		EF96A5532447C8B100D6A983 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A5522447C8B100D6A983 /* CharacterViewController.swift */; };
 		EF9B3BF6244611110087DFD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9B3BF5244611110087DFD9 /* ViewController.swift */; };
 		EF9B3BFD2446452F0087DFD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9B3BFC2446452F0087DFD9 /* Constants.swift */; };
 		EF9B3C04244645840087DFD9 /* AvenirLTStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF9B3C00244645830087DFD9 /* AvenirLTStd-Heavy.otf */; };
@@ -104,6 +105,7 @@
 		EF96A548244671D900D6A983 /* RequestCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCharacter.swift; sourceTree = "<group>"; };
 		EF96A54A24476AEB00D6A983 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		EF96A54B24476AEB00D6A983 /* CharactersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewCell.xib; sourceTree = "<group>"; };
+		EF96A5522447C8B100D6A983 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		EF9B3BF5244611110087DFD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Classes/ViewController.swift; sourceTree = "<group>"; };
 		EF9B3BFC2446452F0087DFD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF9B3C00244645830087DFD9 /* AvenirLTStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Heavy.otf"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				EF1F17002433742000D9FF19 /* Cells */,
 				EF96A5362446647700D6A983 /* Models */,
 				EF96A543244670B000D6A983 /* ViewModel */,
+				EF96A5512447C88E00D6A983 /* Views */,
 				EF1F16E02432938F00D9FF19 /* Services */,
 				EF1F16E2243293D700D9FF19 /* Source */,
 				EF1F174024338BB000D9FF19 /* Theme */,
@@ -306,6 +309,14 @@
 				EF96A548244671D900D6A983 /* RequestCharacter.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF96A5512447C88E00D6A983 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF96A5522447C8B100D6A983 /* CharacterViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EF9B3BF724462B530087DFD9 /* ListItem */ = {
@@ -612,6 +623,7 @@
 				EF96A53E244666AB00D6A983 /* MarvelInfo.swift in Sources */,
 				EF9B3BFD2446452F0087DFD9 /* Constants.swift in Sources */,
 				EF96A53C2446667A00D6A983 /* ServerError.swift in Sources */,
+				EF96A5532447C8B100D6A983 /* CharacterViewController.swift in Sources */,
 				EF96A5402446676800D6A983 /* Character.swift in Sources */,
 				EF9B3C09244645D60087DFD9 /* Fonts.swift in Sources */,
 				EF1F16B12432932400D9FF19 /* AppDelegate.swift in Sources */,
