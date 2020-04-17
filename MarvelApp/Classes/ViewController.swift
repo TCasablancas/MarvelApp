@@ -48,7 +48,7 @@ extension ViewController: UISearchResultsUpdating {
     
     
     fileprivate func registerNib() {
-        let nibName = UINib(nibName: "CharacterTableViewCell", bundle: nil)
+        let nibName = UINib(nibName: "CharactersTableViewCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "Cell")
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 120
@@ -136,7 +136,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 160
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -146,7 +146,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     /// TableView Layout setting
     func layouTableView() {
-        self.tableView.layer.backgroundColor = UIColor.white.cgColor
+        
     }
     
     /// Setting up the logo on HeaderBar

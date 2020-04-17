@@ -18,19 +18,18 @@ class CharactersTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(with character: Character) {
         self.mainTitle.text = character.name
         
-        if let url = URL(string: character.thumbnail.getUrl()){
+        self.mainThumb.image = UIImage(named: "\(character.thumbnail)")
+        
+        if let url = URL(string: character.thumbnail.imagePath()){
             self.mainThumb.kf.indicatorType = .activity
             self.mainThumb.kf.setImage(with: url)
         } else {
@@ -38,7 +37,13 @@ class CharactersTableViewCell: UITableViewCell {
         }
         
         self.mainContainer.layer.cornerRadius = 8
+        self.mainContainer.layer.backgroundColor = Theme.default.secondRed.cgColor
         self.titleContainer.layer.cornerRadius = 6
+        self.titleContainer.layer.backgroundColor = Theme.default.mainBlack.cgColor
+        self.mainTitle.textColor = .white
+        self.mainTitle.font = UIFont(name: Font.avenirBlack.rawValue, size: 16)
+        self.mainThumb.contentMode = .scaleAspectFill
+        self.mainThumb.layer.cornerRadius = 8
     }
     
 }

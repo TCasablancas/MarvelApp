@@ -9,9 +9,17 @@
 import Foundation
 import ObjectMapper
 
-struct Thumbnail: Mappable {
+struct Thumbnail {
     var path: String
     var ext: String
+    
+    func imagePath() -> String {
+        return "\(path).\(ext)"
+    }
+}
+
+extension Thumbnail: Mappable {
+    
     
     init?(map: Map) {
         path = (try? map.value("path")) ?? ""
@@ -21,10 +29,6 @@ struct Thumbnail: Mappable {
     mutating func mapping(map: Map) {
         path <- map["path"]
         ext  <- map["extension"]
-    }
-    
-    func getUrl() -> String {
-        return path + "." + ext
     }
 }
 

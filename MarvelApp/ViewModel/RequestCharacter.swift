@@ -19,16 +19,20 @@ class RequestCharacter: Request {
             queryParams["nameStartsWith"] = name.replacingOccurrences(of: " ", with: "")
         }
         
-        let url = MarvelAPI.basePath + MarvelAPI.pathCharacters + queryParams.queryString! + MarvelAPI.getCredentials()
-        Alamofire.request(url).responseJSON { (response) in
-            let statusCode = response.response?.statusCode
-            switch response.result {
+        
+        
+        //let url = MarvelAPI.basePath + MarvelAPI.pathCharacters + queryParams.queryString! + MarvelAPI.getCredentials()
+        let url = URL(string: "https://gateway.marvel.com/v1/public/characters?ts=1586905779.7129622&apikey=1951bc8fc24c16592930f688c6df1581&hash=573ed42a366f22e623eed11f6c2c69bd")
+        Alamofire.request(url!).responseJSON { (data) in
+            let statusCode = data.response?.statusCode
+            switch data.result {
             case .success(let value):
                 let resultValue = value as? [String:Any]
                 if statusCode == 200 {
                     let model = Mapper<MarvelInfo>().map(JSONObject: resultValue)
                     onComplete(.success(model: model!))
                 }
+                print(data.response)
             case .failure(let error):
                 let errorCode = error._code
                 if errorCode == -1009 {

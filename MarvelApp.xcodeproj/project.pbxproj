@@ -16,9 +16,6 @@
 		EF1F16BD2432932600D9FF19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1F16BB2432932600D9FF19 /* LaunchScreen.storyboard */; };
 		EF1F16D32432932600D9FF19 /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F16D22432932600D9FF19 /* MarvelAppUITests.swift */; };
 		EF1F176D2433956800D9FF19 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F176C2433956800D9FF19 /* UIViewController+Extensions.swift */; };
-		EF1F17742433BE5200D9FF19 /* CharacterDataWrapper.json in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17712433BE5200D9FF19 /* CharacterDataWrapper.json */; };
-		EF1F17752433BE5200D9FF19 /* EmptyCharacterDataWrapper.json in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17722433BE5200D9FF19 /* EmptyCharacterDataWrapper.json */; };
-		EF1F17762433BE5200D9FF19 /* SingleCharacterDataWrapper.json in Resources */ = {isa = PBXBuildFile; fileRef = EF1F17732433BE5200D9FF19 /* SingleCharacterDataWrapper.json */; };
 		EF1F17802434D33700D9FF19 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F177F2434D33700D9FF19 /* ListTests.swift */; };
 		EF1F17822434D72E00D9FF19 /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F17812434D72E00D9FF19 /* ListUITests.swift */; };
 		EF96A535244663B200D6A983 /* Dictionary+queryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A534244663B200D6A983 /* Dictionary+queryString.swift */; };
@@ -88,9 +85,6 @@
 		EF1F16D22432932600D9FF19 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		EF1F16D42432932600D9FF19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1F176C2433956800D9FF19 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		EF1F17712433BE5200D9FF19 /* CharacterDataWrapper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CharacterDataWrapper.json; sourceTree = "<group>"; };
-		EF1F17722433BE5200D9FF19 /* EmptyCharacterDataWrapper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyCharacterDataWrapper.json; sourceTree = "<group>"; };
-		EF1F17732433BE5200D9FF19 /* SingleCharacterDataWrapper.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SingleCharacterDataWrapper.json; sourceTree = "<group>"; };
 		EF1F177F2434D33700D9FF19 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
 		EF1F17812434D72E00D9FF19 /* ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUITests.swift; sourceTree = "<group>"; };
 		EF96A534244663B200D6A983 /* Dictionary+queryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+queryString.swift"; sourceTree = "<group>"; };
@@ -282,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				EF1F16B92432932600D9FF19 /* Assets.xcassets */,
-				EF9B3BFE244645490087DFD9 /* DataAPI */,
 				EF9B3BFF244645730087DFD9 /* Fonts */,
 			);
 			path = Assets;
@@ -326,16 +319,6 @@
 				EF96A54B24476AEB00D6A983 /* CharactersTableViewCell.xib */,
 			);
 			path = ListItem;
-			sourceTree = "<group>";
-		};
-		EF9B3BFE244645490087DFD9 /* DataAPI */ = {
-			isa = PBXGroup;
-			children = (
-				EF1F17712433BE5200D9FF19 /* CharacterDataWrapper.json */,
-				EF1F17722433BE5200D9FF19 /* EmptyCharacterDataWrapper.json */,
-				EF1F17732433BE5200D9FF19 /* SingleCharacterDataWrapper.json */,
-			);
-			path = DataAPI;
 			sourceTree = "<group>";
 		};
 		EF9B3BFF244645730087DFD9 /* Fonts */ = {
@@ -461,14 +444,11 @@
 			files = (
 				EF1F16BD2432932600D9FF19 /* LaunchScreen.storyboard in Resources */,
 				EF9B3C05244645840087DFD9 /* AvenirLTStd-Light.otf in Resources */,
-				EF1F17742433BE5200D9FF19 /* CharacterDataWrapper.json in Resources */,
 				EF1F16BA2432932600D9FF19 /* Assets.xcassets in Resources */,
-				EF1F17752433BE5200D9FF19 /* EmptyCharacterDataWrapper.json in Resources */,
 				EF9B3C04244645840087DFD9 /* AvenirLTStd-Heavy.otf in Resources */,
 				EF1F16B82432932400D9FF19 /* Main.storyboard in Resources */,
 				EF9B3C07244645840087DFD9 /* AvenirLTStd-Medium.otf in Resources */,
 				EF9B3C06244645840087DFD9 /* AvenirLTStd-Black.otf in Resources */,
-				EF1F17762433BE5200D9FF19 /* SingleCharacterDataWrapper.json in Resources */,
 				EF96A54D24476AEB00D6A983 /* CharactersTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
