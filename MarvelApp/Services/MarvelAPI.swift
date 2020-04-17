@@ -13,7 +13,7 @@ class MarvelAPI {
     
     static let basePath = "https://gateway.marvel.com/v1/public"
     static let pathCharacters = "/characters?"
-    static let limit = 150
+    static let limit = 500
     static private let privateKey = "76cb8d0bd88b49abe3e4d049e6064518062f998c"
     static private let publicKey = "1951bc8fc24c16592930f688c6df1581"
     

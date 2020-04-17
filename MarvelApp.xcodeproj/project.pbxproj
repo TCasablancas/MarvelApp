@@ -197,7 +197,6 @@
 				EF96A543244670B000D6A983 /* ViewModel */,
 				EF96A5512447C88E00D6A983 /* Views */,
 				EF1F16E02432938F00D9FF19 /* Services */,
-				EF1F16E2243293D700D9FF19 /* Source */,
 				EF1F174024338BB000D9FF19 /* Theme */,
 				EF1F16B02432932400D9FF19 /* AppDelegate.swift */,
 				EF1F16B22432932400D9FF19 /* SceneDelegate.swift */,
@@ -234,13 +233,6 @@
 				EF9B3C11244661770087DFD9 /* MarvelAPI.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		EF1F16E2243293D700D9FF19 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		EF1F16E3243293DC00D9FF19 /* Extensions */ = {

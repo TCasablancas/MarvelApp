@@ -35,15 +35,11 @@ class CharactersTableViewCell: UITableViewCell {
         } else {
             self.mainThumb.image = UIImage(named: "no-thumb")
         }
-        
-        self.mainContainer.layer.cornerRadius = 8
-        self.mainContainer.layer.backgroundColor = Theme.default.secondRed.cgColor
-        self.titleContainer.layer.cornerRadius = 6
-        self.titleContainer.layer.backgroundColor = Theme.default.mainBlack.cgColor
-        self.mainTitle.textColor = .white
-        self.mainTitle.font = UIFont(name: Font.avenirBlack.rawValue, size: 16)
-        self.mainThumb.contentMode = .scaleAspectFill
-        self.mainThumb.layer.cornerRadius = 8
+    
+        Theme.default.characterMainContainer(self.mainContainer)
+        Theme.default.mainThumbs(self.mainThumb)
+        Theme.default.labelBlackContainer(self.titleContainer)
+        Theme.default.labelBlackBg(self.mainTitle)
     }
     
 }

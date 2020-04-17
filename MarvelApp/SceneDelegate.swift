@@ -16,12 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let rootViewController = ViewController()
-        
         let navigationBar = UINavigationBar.appearance()
-        let searchController = UISearchController(searchResultsController: nil)
-        let searchBar = searchController.searchBar
-        let navigationItem = UINavigationItem()
         
         let attrs = [
             NSAttributedString.Key.foregroundColor: Theme.default.mainBlack,
@@ -29,26 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             NSAttributedString.Key.kern: 0
         ] as [ NSAttributedString.Key : Any ]
         
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        
-        searchController.searchBar.placeholder = "buscar"
-        searchController.searchBar.tintColor = Theme.default.black
         
         navigationBar.largeTitleTextAttributes = attrs
         navigationBar.prefersLargeTitles = false
         navigationBar.barTintColor = Theme.default.mainBlack
         navigationBar.tintColor = .white
         navigationBar.isTranslucent = false
-        
-        searchBar.backgroundColor = .red
-        searchBar.tintColor = .white
-//
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.backgroundColor = .white
-//        window?.rootViewController = rootViewController
-//        window?.makeKeyAndVisible()
-        
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

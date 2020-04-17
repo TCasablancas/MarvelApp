@@ -32,7 +32,6 @@ class RequestCharacter: Request {
                     let model = Mapper<MarvelInfo>().map(JSONObject: resultValue)
                     onComplete(.success(model: model!))
                 }
-                print(data.response)
             case .failure(let error):
                 let errorCode = error._code
                 if errorCode == -1009 {
