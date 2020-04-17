@@ -21,6 +21,7 @@ struct Constants {
             static let mainGreen    = "#009639"
             
             static let gray         = "#595959"
+            static let softGray     = "#F0F0F0"
             static let secondRed    = "#FF2519"
             static let secondBlue   = "#198CFF"
             static let secondGreen  = "#00E356"

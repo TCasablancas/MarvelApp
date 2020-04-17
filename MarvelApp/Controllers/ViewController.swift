@@ -9,12 +9,13 @@
 import UIKit
 import ObjectMapper
 
-class ViewController: UIViewController, UISearchControllerDelegate {
+class ViewController: UIBaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBarView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let requestCharacter = RequestCharacter()
-    let searchController = UISearchController(searchResultsController: nil)
     var character = [Character]()
     var loadingCharacters = false
     var currentPage = 0
@@ -23,6 +24,11 @@ class ViewController: UIViewController, UISearchControllerDelegate {
     var nameSearch = ""
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.barStyle = .black
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +45,13 @@ class ViewController: UIViewController, UISearchControllerDelegate {
         self.layouTableView()
         self.loadData()
         self.registerNib()
-        
+        self.setupSearchBar()
     }
+    
 }
 
-extension ViewController: UISearchResultsUpdating {
-    
-    
-    
+extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
+
     fileprivate func registerNib() {
         let nibName = UINib(nibName: "CharactersTableViewCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "Cell")
@@ -93,16 +98,25 @@ extension ViewController: UISearchResultsUpdating {
     
     /// Setting up SearchBar layout
     func layoutSearchBar() {
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
+        self.searchBarView.backgroundColor = Theme.default.mainBlack
+        self.searchBar.barTintColor = Theme.default.mainBlack
+        self.searchBar.placeholder = "buscar herói"
         
-        searchController.searchBar.barTintColor = Theme.default.mainBlack
-        searchController.searchBar.placeholder = "Buscar Herói"
-        searchController.searchBar.layer.cornerRadius = 15
-        searchController.searchBar.isHidden = true
-        
-        self.tableView.tableHeaderView = searchController.searchBar
+        let txtSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        txtSearchBar?.textColor = Theme.default.white
+        txtSearchBar?.font = UIFont(name: Font.avenirBold.rawValue, size: 16)
+    }
+    
+    func setupSearchBar() {
+        self.searchBar.delegate = self
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        let query = searchBar.text ?? ""
+        if !query.isEmpty {
+            
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -113,9 +127,6 @@ extension ViewController: UISearchResultsUpdating {
        
     }
     
-    @IBAction func openSearch() {
-        self.searchController.searchBar.isHidden = false
-    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -142,6 +153,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedCharacter = self.character[indexPath.row]
         self.performSegue(withIdentifier: "CharacterView", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (character.count - 10) && !loadingCharacters && character.count != total {
+            self.currentPage += 1
+            self.loadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.selectedCharacter = self.character[indexPath.row]
+        self.performSegue(withIdentifier: "CharacterView", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CharacterView" {
+            let view = segue.destination as! CharacterViewController
+            view.selectedCharacter = self.selectedCharacter
+        }
     }
     
     /// TableView Layout setting

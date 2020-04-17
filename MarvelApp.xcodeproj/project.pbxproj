@@ -31,6 +31,7 @@
 		EF96A54C24476AEB00D6A983 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A54A24476AEB00D6A983 /* CharactersTableViewCell.swift */; };
 		EF96A54D24476AEB00D6A983 /* CharactersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF96A54B24476AEB00D6A983 /* CharactersTableViewCell.xib */; };
 		EF96A5532447C8B100D6A983 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A5522447C8B100D6A983 /* CharacterViewController.swift */; };
+		EF96A5552449ED0B00D6A983 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96A5542449ED0B00D6A983 /* UIBaseViewController.swift */; };
 		EF9B3BF6244611110087DFD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9B3BF5244611110087DFD9 /* ViewController.swift */; };
 		EF9B3BFD2446452F0087DFD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9B3BFC2446452F0087DFD9 /* Constants.swift */; };
 		EF9B3C04244645840087DFD9 /* AvenirLTStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF9B3C00244645830087DFD9 /* AvenirLTStd-Heavy.otf */; };
@@ -100,7 +101,8 @@
 		EF96A54A24476AEB00D6A983 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		EF96A54B24476AEB00D6A983 /* CharactersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersTableViewCell.xib; sourceTree = "<group>"; };
 		EF96A5522447C8B100D6A983 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
-		EF9B3BF5244611110087DFD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Classes/ViewController.swift; sourceTree = "<group>"; };
+		EF96A5542449ED0B00D6A983 /* UIBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
+		EF9B3BF5244611110087DFD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF9B3BFC2446452F0087DFD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF9B3C00244645830087DFD9 /* AvenirLTStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Heavy.otf"; sourceTree = "<group>"; };
 		EF9B3C01244645830087DFD9 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				EF1F17702433BE3600D9FF19 /* Assets */,
 				EF1F17002433742000D9FF19 /* Cells */,
+				EF96A556244A011300D6A983 /* Controllers */,
 				EF96A5362446647700D6A983 /* Models */,
 				EF96A543244670B000D6A983 /* ViewModel */,
 				EF96A5512447C88E00D6A983 /* Views */,
@@ -200,9 +203,6 @@
 				EF1F174024338BB000D9FF19 /* Theme */,
 				EF1F16B02432932400D9FF19 /* AppDelegate.swift */,
 				EF1F16B22432932400D9FF19 /* SceneDelegate.swift */,
-				EF9B3BF5244611110087DFD9 /* ViewController.swift */,
-				EF1F16B62432932400D9FF19 /* Main.storyboard */,
-				EF1F16BB2432932600D9FF19 /* LaunchScreen.storyboard */,
 				EF1F16BE2432932600D9FF19 /* Info.plist */,
 			);
 			path = MarvelApp;
@@ -260,6 +260,7 @@
 				EF9B3BFC2446452F0087DFD9 /* Constants.swift */,
 				EF9B3C08244645D60087DFD9 /* Fonts.swift */,
 				EF9B3C0D244646270087DFD9 /* Theme.swift */,
+				EF96A5542449ED0B00D6A983 /* UIBaseViewController.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -299,9 +300,19 @@
 		EF96A5512447C88E00D6A983 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EF96A5522447C8B100D6A983 /* CharacterViewController.swift */,
+				EF1F16B62432932400D9FF19 /* Main.storyboard */,
+				EF1F16BB2432932600D9FF19 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EF96A556244A011300D6A983 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF96A5522447C8B100D6A983 /* CharacterViewController.swift */,
+				EF9B3BF5244611110087DFD9 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		EF9B3BF724462B530087DFD9 /* ListItem */ = {
@@ -605,6 +616,7 @@
 				EF9B3C0E244646270087DFD9 /* Theme.swift in Sources */,
 				EF96A5382446649500D6A983 /* MarvelData.swift in Sources */,
 				EF1F16B32432932400D9FF19 /* SceneDelegate.swift in Sources */,
+				EF96A5552449ED0B00D6A983 /* UIBaseViewController.swift in Sources */,
 				EF1F176D2433956800D9FF19 /* UIViewController+Extensions.swift in Sources */,
 				EF96A535244663B200D6A983 /* Dictionary+queryString.swift in Sources */,
 			);
