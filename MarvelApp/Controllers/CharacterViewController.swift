@@ -27,9 +27,25 @@ class CharacterViewController: UIBaseViewController {
         self.setupLayout()
         self.logoHeader()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        dismiss(animated: true, completion: nil)
+    }
+    
+//    override func updateViewConstraints() {
+//        self.setupLayout()
+//    }
 }
 
 extension CharacterViewController {
+    
+    @IBAction func cancel(_ unwindsegue: UIStoryboardSegue) {
+        //self.dismiss(animated: true, completion: nil)
+        self.navigationController!.popViewController(animated: true)
+        //let main = ViewController()
+        //self.navigationController?.popToViewController(main, animated: true)
+    }
     
     func characterData() {
         if let character = selectedCharacter {

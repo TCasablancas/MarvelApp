@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct Character: Mappable {
     var id: Int
-    var name: String
+    var name: String?
     var description: String
     var thumbnail: Thumbnail
     var urls: [CharacterURL]

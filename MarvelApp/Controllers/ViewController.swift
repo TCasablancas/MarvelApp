@@ -9,21 +9,29 @@
 import UIKit
 import ObjectMapper
 
-class ViewController: UIBaseViewController {
+class ViewController: UIBaseViewController, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBarView: UIView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     let requestCharacter = RequestCharacter()
     var character = [Character]()
+    var searchCharacter = [Character]()
     var loadingCharacters = false
     var currentPage = 0
     var total = 0
     var selectedCharacter: Character? = nil
     var nameSearch = ""
     
+    let searchController = UISearchController(searchResultsController: nil)
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,21 +50,58 @@ class ViewController: UIBaseViewController {
         
         self.logoHeader()
         self.layoutSearchBar()
-        self.layouTableView()
         self.loadData()
         self.registerNib()
-        self.setupSearchBar()
+        //self.resetButton
+        
+        character = searchCharacter
+        
+        self.navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
+        
+        if character.count < 1 {
+            self.resetButton.isEnabled = false
+            self.navigationItem.rightBarButtonItem = nil
+        } else {
+            self.resetButton.isEnabled = true
+            self.navigationItem.rightBarButtonItem = self.resetButton
+        }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchCharacter = self.character.filter({ (character: Character) -> Bool in
+            return character.name!.lowercased().contains(searchText.lowercased())
+        })
+        self.tableView.reloadData()
+    }
+    
+    private lazy var resetButton: UIBarButtonItem = {
+        let navigationItem = UINavigationItem()
+        return UIBarButtonItem(
+            title: "Reset",
+            style: .plain,
+            target: self,
+            action: #selector(reloadData)
+        )
+    }()
 }
 
-extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
-
+extension ViewController: UISearchResultsUpdating {
+    
+    @objc func reloadData() {
+        self.tableView.reloadData()
+    }
+    
     fileprivate func registerNib() {
         let nibName = UINib(nibName: "CharactersTableViewCell", bundle: nil)
         self.tableView.register(nibName, forCellReuseIdentifier: "Cell")
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 120
+        self.tableView.estimatedRowHeight = 140
     }
     
     /// Activity Indicator
@@ -86,7 +131,6 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
             case .timeOut(let description):
                 print("Server error timeOut: \(description) \n")
             }
-            
         }
     }
     
@@ -98,51 +142,57 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     /// Setting up SearchBar layout
     func layoutSearchBar() {
-        self.searchBarView.backgroundColor = Theme.default.mainBlack
-        self.searchBar.barTintColor = Theme.default.mainBlack
-        self.searchBar.placeholder = "buscar herói"
+        self.searchController.searchBar.placeholder = "buscar herói"
         
-        let txtSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        let txtSearchBar = self.searchController.searchBar.value(forKey: "searchField") as? UITextField
         txtSearchBar?.textColor = Theme.default.white
         txtSearchBar?.font = UIFont(name: Font.avenirBold.rawValue, size: 16)
     }
     
-    func setupSearchBar() {
-        self.searchBar.delegate = self
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        let query = searchBar.text ?? ""
-        if !query.isEmpty {
-            
-        }
+    func filterContentSearch(_ searchText: String) {
+        searchCharacter = character.filter({ (hero: Character) -> Bool in
+            return hero.name!.lowercased().contains(searchText.lowercased())
+        })
+        
+        self.tableView.reloadData()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchText: searchController.searchBar.text!)
+        let searchBar = self.searchController.searchBar
+        self.filterContentSearch(searchBar.text!)
     }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-       
-    }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
+//    func resetButton() {
+//        let navigationItem = UINavigationItem()
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(
+//            title: "Reset", style: .done, target: self, action: #selector(reloadData)
+//        )
+//    }
+//
     /// Setting the TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return self.searchCharacter.count
+        }
         return character.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CharactersTableViewCell
+        let char: Character
         let index = indexPath.row
         let item = self.character[index]
         
-        cell.configureCell(with: item)
+        if isFiltering {
+            char = searchCharacter[index]
+        } else {
+            char = item
+        }
         
+        cell.configureCell(with: item)
         return cell
     }
     
@@ -164,6 +214,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         self.selectedCharacter = self.character[indexPath.row]
+        
         self.performSegue(withIdentifier: "CharacterView", sender: nil)
     }
     
@@ -174,10 +225,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    /// TableView Layout setting
-    func layouTableView() {
-        
-    }
     
     /// Setting up the logo on HeaderBar
     func logoHeader() {
