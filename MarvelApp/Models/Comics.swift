@@ -18,12 +18,12 @@ struct Comics: Mappable {
     init?(map: Map) {
         available     = (try? map.value("availabe")) ?? 0
         collectionURI = (try? map.value("collectionURI")) ?? ""
-        items         = [(try? map.value("items.name")) ?? Items(map: map)!]
+        items         = [(try? map.value("items")) ?? Items(map: map)!]
     }
     
     mutating func mapping(map: Map) {
         available     <- map["available"]
         collectionURI <- map["collectionURI"]
-        items         <- map["items.name"]
+        items         <- map["items"]
     }
 }

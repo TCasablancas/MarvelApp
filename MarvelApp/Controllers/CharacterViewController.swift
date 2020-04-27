@@ -21,7 +21,7 @@ class CharacterViewController: UIBaseViewController {
     @IBOutlet weak var titleTv: UILabel!
     
     var selectedCharacter: Character?
-    var items : [Items] = []
+    var items = [Items]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,8 @@ class CharacterViewController: UIBaseViewController {
         
         self.hqTableView.delegate = self
         self.hqTableView.dataSource = self
+        
+        print(selectedCharacter?.series)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -52,11 +54,11 @@ extension CharacterViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = self.hqTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemDetailTableViewCell
         let index = indexPath.row
-        let item = self.items[index]
+        let item = self.selectedCharacter?.series[index]
         
-        cell.dataTitle.text = item.name
+        cell.dataTitle.text = "\(selectedCharacter?.comics)"
         
-        cell.configureCell(with: item)
+        //cell.configureCell(with: item)
         
         return cell
     }

@@ -66,6 +66,8 @@ class ViewController: UIBaseViewController, UISearchBarDelegate {
             self.resetButton.isEnabled = true
             self.navigationItem.rightBarButtonItem = self.resetButton
         }
+        
+        print(self.character.)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
