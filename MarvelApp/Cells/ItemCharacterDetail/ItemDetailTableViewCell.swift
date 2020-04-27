@@ -17,8 +17,8 @@ class ItemDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell(with items: Comics) {
-        self.dataTitle.text = items.collectionURI
+    func configureCell(with items: Items) {
+        self.dataTitle.text = items.name
     
         Theme.default.listItem(self.dataTitle)
         Theme.default.listDetail(self.dataContainer)

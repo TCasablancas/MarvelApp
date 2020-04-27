@@ -21,7 +21,7 @@ class CharacterViewController: UIBaseViewController {
     @IBOutlet weak var titleTv: UILabel!
     
     var selectedCharacter: Character?
-    var items = [Items]()
+    var items : [Items] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,6 @@ class CharacterViewController: UIBaseViewController {
         
         self.hqTableView.delegate = self
         self.hqTableView.dataSource = self
-        
-        print("\(selectedCharacter?.series[2])")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,7 +54,9 @@ extension CharacterViewController: UITableViewDataSource, UITableViewDelegate {
         let index = indexPath.row
         let item = self.items[index]
         
-        //cell.configureCell(with: item)
+        cell.dataTitle.text = item.name
+        
+        cell.configureCell(with: item)
         
         return cell
     }
