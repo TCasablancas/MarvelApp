@@ -154,7 +154,20 @@
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-Ok-xGO">
                                                                                 <rect key="frame" x="0.0" y="30" width="382" height="178"/>
+                                                                                <subviews>
+                                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6p6-oB-KNO">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="178"/>
+                                                                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                    </tableView>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="6p6-oB-KNO" firstAttribute="leading" secondItem="pgY-Ok-xGO" secondAttribute="leading" id="ITa-zC-l3A"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="6p6-oB-KNO" secondAttribute="trailing" id="M60-4D-ivr"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="6p6-oB-KNO" secondAttribute="bottom" id="fqG-p3-CHd"/>
+                                                                                    <constraint firstItem="6p6-oB-KNO" firstAttribute="top" secondItem="pgY-Ok-xGO" secondAttribute="top" id="wkP-Zs-xCP"/>
+                                                                                </constraints>
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
@@ -184,7 +197,20 @@
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjm-db-3fj">
                                                                                 <rect key="frame" x="0.0" y="30" width="382" height="198"/>
+                                                                                <subviews>
+                                                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUb-dT-8O7">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="198"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                    </tableView>
+                                                                                </subviews>
                                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="RUb-dT-8O7" secondAttribute="bottom" id="CIr-Ge-xz2"/>
+                                                                                    <constraint firstItem="RUb-dT-8O7" firstAttribute="leading" secondItem="Wjm-db-3fj" secondAttribute="leading" id="T4c-9j-fQp"/>
+                                                                                    <constraint firstItem="RUb-dT-8O7" firstAttribute="top" secondItem="Wjm-db-3fj" secondAttribute="top" id="ftg-xa-dx0"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="RUb-dT-8O7" secondAttribute="trailing" id="q8G-Dg-Z6v"/>
+                                                                                </constraints>
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
@@ -249,10 +275,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descCharacter" destination="HnX-vR-SLC" id="CZd-8f-SL1"/>
+                        <outlet property="hqTableView" destination="6p6-oB-KNO" id="VEY-0X-Tbj"/>
                         <outlet property="imageCharacter" destination="2qD-Xs-U5Q" id="tcV-gg-fBY"/>
                         <outlet property="imageContainer" destination="NVy-0h-nqI" id="uYF-5P-2I7"/>
                         <outlet property="nameCharacter" destination="e0F-h6-KEe" id="RaN-qk-lHZ"/>
                         <outlet property="nameContainer" destination="YGh-MX-XkM" id="csZ-J2-xiC"/>
+                        <outlet property="seriesTableView" destination="RUb-dT-8O7" id="yOZ-3D-Esj"/>
                         <outlet property="titleHq" destination="rql-eO-6DQ" id="SSF-Rm-Vyo"/>
                         <outlet property="titleTv" destination="WBe-5s-Luh" id="nAe-LO-h0x"/>
                         <segue destination="NHd-OU-QDO" kind="unwind" unwindAction="cancel:" id="rt7-hS-Le5"/>

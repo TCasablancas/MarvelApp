@@ -55,6 +55,13 @@ class Theme {
             label.adjustsFontForContentSizeCategory = true
         }
         
+        static func listItem(_ label: UILabel) {
+            label.textColor = Theme.default.mainBlack
+            label.font = UIFont(name: Font.avenirBlack.rawValue, size: 16)
+            label.textAlignment = .justified
+            label.adjustsFontForContentSizeCategory = true
+        }
+        
         // MARK:= Containers
         static func characterMainContainer(_ view: UIView) {
             view.backgroundColor = Theme.default.mainBlue
@@ -75,6 +82,12 @@ class Theme {
             view.backgroundColor = Theme.default.white
             view.layer.opacity = 0.9
             view.layer.cornerRadius = 8
+        }
+        
+        static func listDetail(_ view: UIView) {
+            view.backgroundColor = Theme.default.softGray
+            view.layer.opacity = 0.9
+            view.layer.cornerRadius = 6
         }
     }
 }

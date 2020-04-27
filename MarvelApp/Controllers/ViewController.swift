@@ -165,13 +165,6 @@ extension ViewController: UISearchResultsUpdating {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
-//    func resetButton() {
-//        let navigationItem = UINavigationItem()
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            title: "Reset", style: .done, target: self, action: #selector(reloadData)
-//        )
-//    }
-//
     /// Setting the TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
