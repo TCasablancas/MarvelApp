@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxP-EB-QIK">
-                        <rect key="frame" x="10" y="10" width="300" height="100"/>
+                        <rect key="frame" x="5" y="5" width="310" height="110"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jan-Nq-7yT">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="110"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVm-rs-OSk">
-                                <rect key="frame" x="10" y="50" width="62" height="40"/>
+                                <rect key="frame" x="20" y="70" width="62" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-aa-uWx">
                                         <rect key="frame" x="10" y="10" width="42" height="20"/>
@@ -44,20 +44,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rVm-rs-OSk" firstAttribute="leading" secondItem="wxP-EB-QIK" secondAttribute="leading" constant="10" id="64H-Yz-NW7"/>
+                            <constraint firstItem="rVm-rs-OSk" firstAttribute="leading" secondItem="wxP-EB-QIK" secondAttribute="leading" constant="20" id="64H-Yz-NW7"/>
                             <constraint firstAttribute="trailing" secondItem="jan-Nq-7yT" secondAttribute="trailing" id="9aD-Ua-QV4"/>
                             <constraint firstAttribute="bottom" secondItem="jan-Nq-7yT" secondAttribute="bottom" id="PmM-hg-fIJ"/>
-                            <constraint firstAttribute="bottom" secondItem="rVm-rs-OSk" secondAttribute="bottom" constant="10" id="SrI-In-BFW"/>
+                            <constraint firstAttribute="bottom" secondItem="rVm-rs-OSk" secondAttribute="bottom" id="SrI-In-BFW"/>
                             <constraint firstItem="jan-Nq-7yT" firstAttribute="top" secondItem="wxP-EB-QIK" secondAttribute="top" id="VfX-EW-SLl"/>
                             <constraint firstItem="jan-Nq-7yT" firstAttribute="leading" secondItem="wxP-EB-QIK" secondAttribute="leading" id="bO5-MK-Om5"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="wxP-EB-QIK" secondAttribute="bottom" constant="10" id="UeC-Sh-AA4"/>
-                    <constraint firstAttribute="trailing" secondItem="wxP-EB-QIK" secondAttribute="trailing" constant="10" id="WPr-Oy-fvw"/>
-                    <constraint firstItem="wxP-EB-QIK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dti-tD-mzz"/>
-                    <constraint firstItem="wxP-EB-QIK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hNg-Qa-JDb"/>
+                    <constraint firstAttribute="bottom" secondItem="wxP-EB-QIK" secondAttribute="bottom" constant="5" id="UeC-Sh-AA4"/>
+                    <constraint firstAttribute="trailing" secondItem="wxP-EB-QIK" secondAttribute="trailing" constant="5" id="WPr-Oy-fvw"/>
+                    <constraint firstItem="wxP-EB-QIK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="dti-tD-mzz"/>
+                    <constraint firstItem="wxP-EB-QIK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="hNg-Qa-JDb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

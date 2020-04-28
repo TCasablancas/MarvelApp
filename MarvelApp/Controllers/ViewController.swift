@@ -52,7 +52,6 @@ class ViewController: UIBaseViewController, UISearchBarDelegate {
         self.layoutSearchBar()
         self.loadData()
         self.registerNib()
-        //self.resetButton
         
         character = searchCharacter
         
@@ -66,8 +65,6 @@ class ViewController: UIBaseViewController, UISearchBarDelegate {
             self.resetButton.isEnabled = true
             self.navigationItem.rightBarButtonItem = self.resetButton
         }
-        
-        print(self.character.)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -205,12 +202,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             self.currentPage += 1
             self.loadData()
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        self.selectedCharacter = self.character[indexPath.row]
-        
-        self.performSegue(withIdentifier: "CharacterView", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

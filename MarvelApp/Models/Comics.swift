@@ -18,7 +18,8 @@ struct Comics: Mappable {
     init?(map: Map) {
         available     = (try? map.value("availabe")) ?? 0
         collectionURI = (try? map.value("collectionURI")) ?? ""
-        items         = [(try? map.value("items")) ?? Items(map: map)!]
+        items         = []
+        
     }
     
     mutating func mapping(map: Map) {

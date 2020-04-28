@@ -17,31 +17,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWy-8g-B6y">
-                        <rect key="frame" x="10" y="10" width="300" height="40"/>
+                        <rect key="frame" x="0.0" y="5" width="320" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v2-7W-cwv">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3v2-7W-cwv">
+                                <rect key="frame" x="15" y="0.0" width="290" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3v2-7W-cwv" firstAttribute="leading" secondItem="JWy-8g-B6y" secondAttribute="leading" id="Hrd-0l-LaY"/>
-                            <constraint firstAttribute="trailing" secondItem="3v2-7W-cwv" secondAttribute="trailing" id="R2P-b7-FEg"/>
+                            <constraint firstItem="3v2-7W-cwv" firstAttribute="leading" secondItem="JWy-8g-B6y" secondAttribute="leading" constant="15" id="Hrd-0l-LaY"/>
+                            <constraint firstAttribute="trailing" secondItem="3v2-7W-cwv" secondAttribute="trailing" constant="15" id="R2P-b7-FEg"/>
                             <constraint firstAttribute="bottom" secondItem="3v2-7W-cwv" secondAttribute="bottom" id="ZHD-Ms-mpn"/>
                             <constraint firstItem="3v2-7W-cwv" firstAttribute="top" secondItem="JWy-8g-B6y" secondAttribute="top" id="jwT-HI-RgT"/>
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="JWy-8g-B6y" secondAttribute="bottom" constant="10" id="3e3-Bw-XHs"/>
-                    <constraint firstAttribute="trailing" secondItem="JWy-8g-B6y" secondAttribute="trailing" constant="10" id="93B-G9-ikr"/>
-                    <constraint firstItem="JWy-8g-B6y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="KOL-9l-DN7"/>
-                    <constraint firstItem="JWy-8g-B6y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oce-O1-v4y"/>
+                    <constraint firstAttribute="bottom" secondItem="JWy-8g-B6y" secondAttribute="bottom" constant="5" id="3e3-Bw-XHs"/>
+                    <constraint firstAttribute="trailing" secondItem="JWy-8g-B6y" secondAttribute="trailing" id="93B-G9-ikr"/>
+                    <constraint firstItem="JWy-8g-B6y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KOL-9l-DN7"/>
+                    <constraint firstItem="JWy-8g-B6y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="oce-O1-v4y"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dataContainer" destination="JWy-8g-B6y" id="cYu-C6-LrS"/>

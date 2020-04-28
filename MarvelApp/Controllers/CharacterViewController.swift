@@ -11,17 +11,14 @@ import UIKit
 class CharacterViewController: UIBaseViewController {
     
     @IBOutlet weak var hqTableView: UITableView!
-    @IBOutlet weak var seriesTableView: UITableView!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageCharacter: UIImageView!
     @IBOutlet weak var nameContainer: UIView!
     @IBOutlet weak var nameCharacter: UILabel!
     @IBOutlet weak var descCharacter: UILabel!
     @IBOutlet weak var titleHq: UILabel!
-    @IBOutlet weak var titleTv: UILabel!
     
     var selectedCharacter: Character?
-    var items = [Items]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +30,6 @@ class CharacterViewController: UIBaseViewController {
         
         self.hqTableView.delegate = self
         self.hqTableView.dataSource = self
-        
-        print(selectedCharacter?.series)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -42,29 +37,47 @@ class CharacterViewController: UIBaseViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        self.imageContainer.updateConstraintsIfNeeded()
+    }
 }
 
 extension CharacterViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return (selectedCharacter?.comics?.items.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = self.hqTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemDetailTableViewCell
         let index = indexPath.row
-        let item = self.selectedCharacter?.series[index]
+        let comics = selectedCharacter?.comics
+        let item = comics!.items[index]
         
-        cell.dataTitle.text = "\(selectedCharacter?.comics)"
-        
-        //cell.configureCell(with: item)
+        cell.dataTitle.text = item.name
+        cell.configureCell(with: item)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //self.selectedCharacter = self.comics[indexPath.row]
+        var selChar : Int? = selectedCharacter?.id
+        let convert = selChar.map(String.init) ?? ""
+        
+        self.performSegue(withIdentifier: "COMIC_DATA", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "COMIC_DATA" {
+            let view = segue.destination as! ComicDataViewController
+            view.selectedCharacter = self.selectedCharacter
+        }
     }
 }
 
@@ -78,13 +91,19 @@ extension CharacterViewController {
         let nibName = UINib(nibName: "ItemDetailTableViewCell", bundle: nil)
         self.hqTableView.register(nibName, forCellReuseIdentifier: "Cell")
         self.hqTableView.rowHeight = UITableView.automaticDimension
-        self.hqTableView.estimatedRowHeight = 60
+        self.hqTableView.estimatedRowHeight = 70
     }
     
     func characterData() {
         if let character = selectedCharacter {
             self.nameCharacter.text = character.name
-            self.descCharacter.text = character.description
+            
+            if character.description.count > 0 {
+                self.nameContainer.isHidden = false
+                self.descCharacter.text = character.description
+            } else {
+                self.nameContainer.isHidden = true
+            }
             
             if let url = URL(string: character.thumbnail.imagePath()) {
                 self.imageCharacter.kf.indicatorType = .activity
@@ -92,7 +111,6 @@ extension CharacterViewController {
             } else {
                 self.imageCharacter.image = UIImage(named: "no-thumb")
             }
-        
         }
     }
     
@@ -103,7 +121,6 @@ extension CharacterViewController {
         Theme.default.nameCharacter(self.nameCharacter)
         Theme.default.descriptionCharacter(self.descCharacter)
         Theme.default.nameCharacter(self.titleHq)
-        Theme.default.nameCharacter(self.titleTv)
         
         self.nameCharacter.textColor = Theme.default.mainRed
     }

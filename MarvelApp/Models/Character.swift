@@ -14,16 +14,14 @@ struct Character: Mappable {
     var name: String?
     var description: String
     var thumbnail: Thumbnail
-    var comics: [Comics]
-    var series: [Series]
+    var comics: Comics?
     
     init?(map: Map) {
         id          = (try? map.value("id")) ?? 0
         name        = (try? map.value("name")) ?? ""
         description = (try? map.value("description")) ?? ""
         thumbnail   = (try? map.value("thumbnail")) ?? Thumbnail(map: map)!
-        comics      = [(try? map.value("comics")) ?? Comics(map: map)!]
-        series      = [(try? map.value("series")) ?? Series(map: map)!]
+        comics      = (try? map.value("name"))
     }
     
     mutating func mapping(map: Map) {
@@ -32,7 +30,6 @@ struct Character: Mappable {
         description <- map["description"]
         thumbnail   <- map["thumbnail"]
         comics      <- map["comics"]
-        series      <- map["series"]
     }
     
     

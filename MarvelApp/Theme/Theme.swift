@@ -9,7 +9,9 @@
 import UIKit
 
 class Theme {
+    
     struct `default` {
+        
         // MARK:- Colors
         static let white        = UIColor(hexString: Constants.Colors.Hex.white)
         static let black        = UIColor(hexString: Constants.Colors.Hex.black)
@@ -51,14 +53,14 @@ class Theme {
         static func descriptionCharacter(_ label: UILabel) {
             label.textColor = Theme.default.mainBlack
             label.font = UIFont(name: Font.avenirLight.rawValue, size: 16)
-            label.textAlignment = .justified
+            //label.textAlignment = .justified
             label.adjustsFontForContentSizeCategory = true
         }
         
         static func listItem(_ label: UILabel) {
             label.textColor = Theme.default.mainBlack
             label.font = UIFont(name: Font.avenirBlack.rawValue, size: 16)
-            label.textAlignment = .justified
+            //label.textAlignment = .justified
             label.adjustsFontForContentSizeCategory = true
         }
         
@@ -69,23 +71,24 @@ class Theme {
         }
         
         static func mainThumbs(_ imageView: UIImageView) {
-            imageView.layer.cornerRadius = 8
+            //imageView.layer.cornerRadius = 8
             imageView.contentMode = .scaleAspectFill
         }
         
         static func labelBlackContainer(_ view: UIView) {
             view.backgroundColor = Theme.default.mainBlack
-            view.layer.cornerRadius = 6
+            view.layer.opacity = 0.85
+            //view.layer.cornerRadius = 6
         }
         
         static func characterLabel(_ view: UIView) {
             view.backgroundColor = Theme.default.white
             view.layer.opacity = 0.9
-            view.layer.cornerRadius = 8
+            //view.layer.cornerRadius = 8
         }
         
         static func listDetail(_ view: UIView) {
-            view.backgroundColor = Theme.default.softGray
+            view.backgroundColor = Theme.default.white
             view.layer.opacity = 0.9
             view.layer.cornerRadius = 6
         }
