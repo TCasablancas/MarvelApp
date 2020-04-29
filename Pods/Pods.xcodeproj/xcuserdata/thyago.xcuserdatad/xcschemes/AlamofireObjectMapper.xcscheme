@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3F64080413BB03C0B16BFEB621E6E0F2"
-               BuildableName = "AlamofireObjectMapper.framework"
+               BuildableName = "libAlamofireObjectMapper.a"
                BlueprintName = "AlamofireObjectMapper"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
 
 class CharacterViewController: UIBaseViewController {
     
@@ -17,8 +19,10 @@ class CharacterViewController: UIBaseViewController {
     @IBOutlet weak var nameCharacter: UILabel!
     @IBOutlet weak var descCharacter: UILabel!
     @IBOutlet weak var titleHq: UILabel!
+    @IBOutlet weak var btnComic: UIButton!
     
     var selectedCharacter: Character?
+    let character = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,8 @@ class CharacterViewController: UIBaseViewController {
         
         self.hqTableView.delegate = self
         self.hqTableView.dataSource = self
+        
+        self.comicsCredentials()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -45,6 +51,17 @@ class CharacterViewController: UIBaseViewController {
 
 extension CharacterViewController: UITableViewDataSource, UITableViewDelegate {
 
+    func comicsCredentials() {
+        
+        let comic = String((selectedCharacter?.comics!.collectionURI)!) + "?"
+        let url = comic + MarvelAPI.getCredentials()
+        let dataURL = URL(string: url)
+        
+        
+    
+        print(url)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (selectedCharacter?.comics?.items.count)!
     }
@@ -66,10 +83,7 @@ extension CharacterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.selectedCharacter = self.comics[indexPath.row]
-        var selChar : Int? = selectedCharacter?.id
-        let convert = selChar.map(String.init) ?? ""
-        
+        self.selectedCharacter = self.character[indexPath.row]
         self.performSegue(withIdentifier: "COMIC_DATA", sender: nil)
     }
     
@@ -85,6 +99,20 @@ extension CharacterViewController {
     
     @IBAction func cancel(_ unwindsegue: UIStoryboardSegue) {
         self.navigationController!.popViewController(animated: true)
+    }
+    
+    @IBAction func goToComic() {
+        self.performSegue(withIdentifier: "COMIC_DATA", sender: nil)
+    }
+    
+    func setupBlur() {
+        
+        let blurView = UIVisualEffectView()
+        blurView.frame.size.width = view.frame.width
+        blurView.frame.size.height = view.frame.height
+        blurView.effect = UIBlurEffect(style: .light)
+        self.view.bringSubviewToFront(blurView)
+        self.view.addSubview(blurView)
     }
     
     fileprivate func registerNib() {
@@ -121,8 +149,15 @@ extension CharacterViewController {
         Theme.default.nameCharacter(self.nameCharacter)
         Theme.default.descriptionCharacter(self.descCharacter)
         Theme.default.nameCharacter(self.titleHq)
+        Theme.default.callToActionBottom(self.btnComic)
         
         self.nameCharacter.textColor = Theme.default.mainRed
+        self.btnComic.setTitle("most expensive comic", for: .normal)
+    
+        var selChar : Int? = selectedCharacter?.comics?.items.count
+        let convert = selChar.map(String.init) ?? ""
+        
+        self.titleHq.text = "All Comics Appearances" + " (" + convert + ")"
     }
     
     func logoHeader() {

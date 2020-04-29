@@ -38,15 +38,31 @@ class Theme {
             label.adjustsFontForContentSizeCategory = true
         }
         
+        static func mainTextBlackBg(_ label: UILabel) {
+            label.textColor = Theme.default.white
+            label.font = UIFont(name: Font.avenirLight.rawValue, size: 16)
+        }
+        
         static func labelWhiteBg(_ label: UILabel) {
             label.textColor = Theme.default.mainBlack
             label.font = UIFont(name: Font.avenirBlack.rawValue, size: 16)
             label.adjustsFontForContentSizeCategory = true
         }
         
+        static func price(_ label: UILabel) {
+            label.textColor = Theme.default.white
+            label.font = UIFont(name: Font.avenirBlack.rawValue, size: 32)
+        }
+        
         static func nameCharacter(_ label: UILabel) {
             label.textColor = Theme.default.mainBlue
             label.font = UIFont(name: Font.avenirBlack.rawValue, size: 20)
+            label.adjustsFontForContentSizeCategory = true
+        }
+        
+        static func bigTitle(_ label: UILabel) {
+            label.textColor = Theme.default.white
+            label.font = UIFont(name: Font.avenirBlack.rawValue, size: 26)
             label.adjustsFontForContentSizeCategory = true
         }
         
@@ -64,7 +80,7 @@ class Theme {
             label.adjustsFontForContentSizeCategory = true
         }
         
-        // MARK:= Containers
+        // MARK:- Containers
         static func characterMainContainer(_ view: UIView) {
             view.backgroundColor = Theme.default.mainBlue
             view.layer.cornerRadius = 8
@@ -91,6 +107,13 @@ class Theme {
             view.backgroundColor = Theme.default.white
             view.layer.opacity = 0.9
             view.layer.cornerRadius = 6
+        }
+        
+        // MARK:- Buttons
+        static func callToActionBottom(_ button: UIButton) {
+            button.backgroundColor = Theme.default.mainRed
+            button.titleLabel?.font = UIFont(name: Font.avenirBold.rawValue, size: 22)
+            button.setTitleColor(Theme.default.white, for: .normal)
         }
     }
 }

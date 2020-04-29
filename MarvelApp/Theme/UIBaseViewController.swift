@@ -12,7 +12,7 @@ class UIBaseViewController: UIViewController {
     
     
     @IBAction func dismissPage(_ sender: Any) {
-        //self.view.endEditing(true)
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
 }

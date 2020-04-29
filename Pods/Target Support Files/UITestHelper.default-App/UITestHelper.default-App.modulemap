@@ -1,5 +1,6 @@
-framework module UITestHelper {
+module UITestHelper {
   umbrella header "UITestHelper.default-App-umbrella.h"
+  exclude header "UITestHelper-App-umbrella.h"
 
   export *
   module * { export * }

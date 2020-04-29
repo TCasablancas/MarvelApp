@@ -22,6 +22,7 @@ class ViewController: UIBaseViewController, UISearchBarDelegate {
     var selectedCharacter: Character? = nil
     var nameSearch = ""
     
+    var refreshControl: UIRefreshControl?
     let searchController = UISearchController(searchResultsController: nil)
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -52,6 +53,7 @@ class ViewController: UIBaseViewController, UISearchBarDelegate {
         self.layoutSearchBar()
         self.loadData()
         self.registerNib()
+        self.addRefreshControl()
         
         character = searchCharacter
         
@@ -94,6 +96,18 @@ extension ViewController: UISearchResultsUpdating {
     
     @objc func reloadData() {
         self.tableView.reloadData()
+    }
+    
+    @objc func refreshList() {
+        refreshControl?.endRefreshing()
+        self.tableView.reloadData()
+    }
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = Theme.default.mainRed
+        refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        self.tableView.addSubview(refreshControl!)
     }
     
     fileprivate func registerNib() {
@@ -146,6 +160,8 @@ extension ViewController: UISearchResultsUpdating {
         let txtSearchBar = self.searchController.searchBar.value(forKey: "searchField") as? UITextField
         txtSearchBar?.textColor = Theme.default.white
         txtSearchBar?.font = UIFont(name: Font.avenirBold.rawValue, size: 16)
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
     }
     
     func filterContentSearch(_ searchText: String) {
@@ -198,10 +214,31 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == (character.count - 10) && !loadingCharacters && character.count != total {
+        if indexPath.row == (character.count - 20) && !loadingCharacters && character.count != total {
             self.currentPage += 1
             self.loadData()
         }
+        
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 40, 0)
+        
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.75) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favorite = UIContextualAction(style: .normal, title: "") {  (contextualAction, view, boolValue) in
+             print("Favoritar")
+        }
+        favorite.backgroundColor = Theme.default.mainRed
+        favorite.image = UIImage(systemName: "heart.fill")
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [favorite])
+
+        return swipeActions
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -210,7 +247,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             view.selectedCharacter = self.selectedCharacter
         }
     }
-    
     
     /// Setting up the logo on HeaderBar
     func logoHeader() {

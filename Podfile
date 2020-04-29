@@ -16,7 +16,7 @@ end
 
 target 'MarvelApp' do
 
-  use_frameworks!
+  #use_frameworks!
 
   default_pods
   pod 'UITestHelper/App'
